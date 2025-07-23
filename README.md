@@ -1,5 +1,5 @@
 
-# 🚀 Proyecto ETL APACHE DRILL
+# 🚀 Proyecto API APACHE DRILL
 Pipeline ETL que extrae datos abiertos, transforma con Apache Drill y guarda en MySQL.
 
 ## Ejecutar
