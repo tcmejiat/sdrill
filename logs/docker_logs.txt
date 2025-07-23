@@ -1,0 +1,3 @@
+php_1  | ✅ Proceso ETL completado exitosamente.
+drill_1 | Drillbit started.
+mysql_1 | ready for connections.

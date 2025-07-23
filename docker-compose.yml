@@ -1,21 +1,22 @@
+
 version: '3'
-
 services:
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-13}-alpine
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - drill
+      - mysql
+  drill:
+    image: apache/drill
+    ports:
+      - "8047:8047"
+    command: ["drill-embedded"]
+  mysql:
+    image: mysql:5.7
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
-      POSTGRES_USER: ${POSTGRES_USER:-symfony}
-    volumes:
-      - db-data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
-
-volumes:
-###> doctrine/doctrine-bundle ###
-  db-data:
-###< doctrine/doctrine-bundle ###
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: etl_db
+    ports:
+      - "3306:3306"

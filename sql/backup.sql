@@ -1,0 +1,1 @@
+-- Script para exportar datos de inec_transporte
