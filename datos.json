@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2025-05-01",
+    "location": "New York",
+    "temp_c": 18,
+    "humidity": 65
+  },
+  {
+    "date": "2025-05-02",
+    "location": "New York",
+    "temp_c": 20,
+    "humidity": 60
+  },
+  {
+    "date": "2025-05-01",
+    "location": "Quito",
+    "temp_c": 16,
+    "humidity": 75
+  }
+]
