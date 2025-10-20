@@ -1,16 +1,21 @@
 
-# 🚀 Proyecto API APACHE DRILL
-Pipeline ETL que extrae datos abiertos, transforma con Apache Drill y guarda en MySQL.
+# Panel PHP + Apache Drill
 
-## Ejecutar
-docker-compose up --build
+## Descripción
+Interfaz web que permite al usuario:
+- Seleccionar tabla (CSV o JSON)
+- Seleccionar columnas
+- Especificar condición WHERE
+- Ejecutar consulta dinámica a Apache Drill desde PHP
 
-## Acceso
-http://localhost:8080
+## Pre-Requisitos
+- XAMPP o similar (servidor Apache + PHP). (Instalar)
+- Apache Drill corriendo en http://localhost:8047 (Instalar)
+- Archivos CSV/JSON ubicados en dfs.`default`.`/xampp\htdocs\sdrill/ (Configura la ruta en el archivo index.php)
 
-## Casos de prueba
-1. Extracción total
-2. Extracción por zona urbana
+## Cómo usar
+1. Copia el archivo index.php en htdocs
+2. Abre http://localhost/index.php
+3. Selecciona tabla, columnas y condición
+4. Verás la consulta generada y resultados
 
-## Documentación
-Ver docs/ETL_Transporte_Ecuador.docx
